@@ -1,16 +1,13 @@
 <?php
-// منع ظهور التحذيرات للمستخدم لكي لا يخرب شكل التصميم
-error_reporting(E_ERROR | E_PARSE);
+$host = "mysql.railway.internal";
+$user = "root";
+$pass = "wRvDaoyUJRmDrbfdYFnnVhIrTRycQMGY";
+$db   = "railway";
 
-// ضبط الوقت قبل بدء أي جلسة
-if (session_status() === PHP_SESSION_NONE) {
-    ini_set('session.gc_maxlifetime', 31536000);
-    ini_set('session.cookie_lifetime', 31536000);
-    session_start();
-}
+$conn = new mysqli($host, $user, $pass, $db);
 
-$conn = new mysqli("interchange.proxy.rlwy.net", "root",if ($conn->connect_error) {
-    die("فشل الاتصال");
+if ($conn->connect_error) {
+    // هذا السطر سيخبرك بالضبط ما هي المشكلة لو فشل
+    die("Connection failed: " . $conn->connect_error);
 }
-$conn->set_charset("utf8mb4");
 ?>
