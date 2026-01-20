@@ -9,7 +9,7 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-$conn = new mysqli("localhost", "root", "", "basic_const");
+$conn = new mysqli("interchange.proxy.rlwy.net", "root", "wRvDaoyUJRmDrbfdYFnnVhIrTRycQMGY", "railway", 22025);
 if ($conn->connect_error) {
     die("فشل الاتصال");
 }
