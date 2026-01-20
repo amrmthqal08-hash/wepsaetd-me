@@ -9,8 +9,7 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-$conn = new mysqli("interchange.proxy.rlwy.net", "root", "wRvDaoyUJRmDrbfdYFnnVhIrTRycQMGY", "railway", 22025);
-if ($conn->connect_error) {
+$conn = new mysqli("interchange.proxy.rlwy.net", "root",if ($conn->connect_error) {
     die("فشل الاتصال");
 }
 $conn->set_charset("utf8mb4");
